@@ -20,5 +20,7 @@ export default defineConfig({
 	image: {
 		domains: ['astro.build'],
 		remotePatterns: [{ protocol: 'https' }]
-	}
+	},
+	site: import.meta.env.PROD ? 'https://lolikana.github.io' : undefined,
+	base: import.meta.env.PROD ? '/kintetsu-g' : undefined
 });
