@@ -1,5 +1,6 @@
 ---
 import Logo from '@assets/images/logo.png';
+import Burger from '@components/ui/Burger.astro';
 import { Image } from 'astro:assets';
 ---
 
@@ -18,6 +19,7 @@ import { Image } from 'astro:assets';
 		<div class="nav__button eng-text">
 			<a href="/entry" class="nav__button_link">ENTRY</a>
 		</div>
+		<Burger />
 	</nav>
 </header>
 
@@ -27,15 +29,22 @@ import { Image } from 'astro:assets';
 	.header {
 		width: 100%;
 		height: 74px;
-		padding: 12px;
+		padding: 12px 12px;
 
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
+		transition: all 250ms ease-in-out;
+	}
+
+	.header.open {
+		height: 90px;
+		padding: 20px 15px;
 	}
 
 	.logo__link {
+		display: block;
 		&_image {
 			width: 200px;
 			margin-bottom: 0.25rem;
@@ -66,6 +75,12 @@ import { Image } from 'astro:assets';
 				}
 			}
 		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
 	}
 
 	@media screen and (min-width: 768px) {
@@ -88,6 +103,7 @@ import { Image } from 'astro:assets';
 			&_text {
 				font-size: $__font16;
 				margin-bottom: 0.23rem;
+				word-break: keep-all;
 			}
 		}
 	}
