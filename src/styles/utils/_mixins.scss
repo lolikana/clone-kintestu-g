@@ -1,0 +1,143 @@
+$__breakpoints: (
+	xs: 'screen and (min-width: 320px)',
+	sm: 'screen and (min-width: 480px)',
+	md: 'screen and (min-width: 768px)',
+	lg: 'screen and (min-width: 992px)',
+	xl: 'screen and (min-width: 1280px)',
+	custom375: 'screen and (min-width: 375px)',
+	custom600: 'screen and (min-width: 600px)',
+	custom700: 'screen and (min-width: 700px)',
+	custom900: 'screen and (min-width: 900px)',
+	custom1024: 'screen and (min-width: 1024px)',
+	custom1440: 'screen and (min-width: 1440px)',
+	custom1600: 'screen and (min-width: 1600px)',
+	safari: 'screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)'
+) !default;
+
+@mixin mq($__breakpoint: lg) {
+	@media #{map-get($__breakpoints, $__breakpoint)} {
+		@content;
+	}
+}
+
+@mixin font-responsive($min, $max) {
+	font-size: calc(#{$min}rem + (#{$max} - #{$min}) * ((100vw - 375px) / (1600 - 375)));
+}
+
+// Define vertical, horizontal, or both position
+@mixin position-alignment($position) {
+	position: $__absolute;
+
+	@if $position == 'vertical' {
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	} @else if $position == 'horizontal' {
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		transform: translate(-50%);
+	} @else if $position == 'both' {
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+}
+
+@mixin background-properties(
+	$__cover: cover,
+	$__no-repeat: no-repeat,
+	$__center: center
+) {
+	background-size: $__cover;
+	background-repeat: $__no-repeat;
+	background-position: $__center;
+}
+
+@mixin position(
+	$__position_value,
+	$__top_value,
+	$__right_value,
+	$__bottom_value,
+	$__left_value
+) {
+	position: $__position_value;
+	top: $__top_value;
+	right: $__right_value;
+	bottom: $__bottom_value;
+	left: $__left_value;
+}
+
+@mixin margin-padding($__margin, $__padding) {
+	margin: $__margin;
+	padding: $__padding;
+}
+
+@mixin width-height($w-unit, $h-unit) {
+	width: $w-unit;
+	height: $h-unit;
+}
+
+@mixin box-shadow(
+	$__inset: inset,
+	$__horizontaloffset: 10px,
+	$__verticaloffset: 10px,
+	$blur: 10px,
+	$__spread: 10px,
+	$__color: #000000
+) {
+	-webkit-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread
+		$__color;
+	-moz-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+	box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+}
+
+@mixin custom-box-shadow(
+	$__horizontaloffset: 0 0 5px,
+	$__verticaloffset: 0 0 10px,
+	$blur: 0 0 10px,
+	$__spread: 0 0 10px,
+	$__color: #000000
+) {
+	box-shadow:
+		$__horizontaloffset $__color,
+		$__verticaloffset $__color,
+		$blur $__color,
+		$__spread #c2c6c6;
+}
+
+@mixin underline($__width: 2rem, $__margin: 0 0 60px 0, $__bottom: calc(-30px + 1px)) {
+	position: relative;
+	margin: $__margin;
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: $__width;
+		height: 1px;
+		background-color: $__primary;
+		bottom: $__bottom;
+		@include mq(md) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+/** Extends **/
+%flex-center {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	justify-content: center;
+	-webkit-justify-content: center;
+}
+
+%full_width_height_div {
+	width: $__full__width;
+	height: $__full__height;
+}

@@ -1,1 +1,31 @@
 @import './reset';
+@import './config';
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+	font-size: $__font16;
+}
+
+body {
+	min-width: 375px;
+	max-width: 1600px;
+	font-family:
+		'Noto Sans JP',
+		sans-serif,
+		system-ui,
+		-apple-system,
+		Roboto,
+		sans-serif;
+	color: $__main;
+	letter-spacing: 0.05em;
+}
+
+.eng-text {
+	font-family: 'Barlow Condensed', sans-serif;
+}
+
+.italic {
+	font-style: italic;
+}
