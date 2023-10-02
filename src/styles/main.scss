@@ -8,13 +8,18 @@ body {
 	font-size: $__font16;
 }
 
-body {
+body,
+header {
 	min-width: 375px;
 	max-width: 1600px;
+}
+
+body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin: 0 auto;
 	font-family:
 		'Noto Sans JP',
 		sans-serif,
