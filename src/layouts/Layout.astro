@@ -2,6 +2,7 @@
 import '@styles/main.scss';
 
 import Header from '@components/layout/Header.astro';
+import NavMenu from '@components/layout/NavMenu.astro';
 
 const { headTitle } = Astro.props;
 ---
@@ -29,6 +30,9 @@ const { headTitle } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<NavMenu />
+		<main>
+			<slot />
+		</main>
 	</body>
 </html>

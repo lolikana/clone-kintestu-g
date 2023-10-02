@@ -9,10 +9,29 @@
 <script>
 	const header = document.querySelector('.header') as HTMLElement;
 	const menuBtn = document.querySelector('.menu-btn') as HTMLDivElement;
+	const nav = document.querySelector('.nav') as HTMLElement;
+	const menuNavLinks = document.querySelectorAll('.nav__item_link');
+	let menuOpen = false;
+
+	const toggleMenu = (state: boolean) => {
+		!menuOpen ? header.classList.add('open') : header.classList.remove('open');
+		!menuOpen ? menuBtn.classList.add('open') : menuBtn.classList.remove('open');
+		nav.setAttribute('aria-expanded', (!menuOpen).toString());
+		menuOpen = state;
+	};
 
 	menuBtn.addEventListener('click', () => {
-		window.innerWidth < 480 ? header.classList.toggle('open') : null;
-		menuBtn.classList.toggle('open');
+		if (!menuOpen) {
+			toggleMenu(true);
+		} else {
+			toggleMenu(false);
+		}
+	});
+
+	menuNavLinks.forEach(link => {
+		link.addEventListener('click', () => {
+			toggleMenu(false);
+		});
 	});
 </script>
 
@@ -20,7 +39,6 @@
 	@import '@styles/config';
 
 	.menu-btn {
-		z-index: 9999;
 		background-color: $__main;
 		border-radius: 50%;
 		display: flex;
