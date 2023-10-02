@@ -45,7 +45,6 @@
 		width: 100%;
 		position: absolute;
 		left: 0;
-		top: $__header_mobile_height;
 		padding-left: 4rem;
 
 		display: flex;
@@ -66,8 +65,9 @@
 	}
 
 	.nav[aria-expanded='true'] {
-		height: calc(100% - $__header_desktop_height);
+		height: calc(100vh - $__header_desktop_height);
 		transition-delay: height 250ms;
+		top: $__header_desktop_height;
 
 		.nav__items {
 			opacity: 1;

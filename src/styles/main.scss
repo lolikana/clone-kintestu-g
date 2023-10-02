@@ -11,6 +11,10 @@ body {
 body {
 	min-width: 375px;
 	max-width: 1600px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	font-family:
 		'Noto Sans JP',
 		sans-serif,
@@ -23,11 +27,7 @@ body {
 }
 
 main {
-	padding-top: $__header_mobile_height;
-
-	@include mq(md) {
-		padding-top: $__header_desktop_height;
-	}
+	padding-top: $__header_desktop_height;
 }
 
 .eng-text {
