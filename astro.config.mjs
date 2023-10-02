@@ -9,8 +9,13 @@ export default defineConfig({
 			alias: {
 				'@components': '/src/components',
 				'@layouts': '/src/layouts',
-				'@styles': '/src/styles'
+				'@styles': '/src/styles',
+				'@assets': '/src/assets'
 			}
 		}
+	},
+	image: {
+		domains: ['astro.build'],
+		remotePatterns: [{ protocol: 'https' }]
 	}
 });
