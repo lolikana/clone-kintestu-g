@@ -1,0 +1,54 @@
+---
+
+---
+
+<ul class="top__links">
+	<li class="top__link"><a href="#article-message">Message</a></li>
+	<li class="top__link"><a href="#section-topics">Topics</a></li>
+	<li class="top__link"><a href="#section-about">About</a></li>
+	<li class="top__link"><a href="#section-people">People</a></li>
+	<li class="top__link"><a href="#section-environment">Environment</a></li>
+	<li class="top__link"><a href="#section-recruit">Recruit</a></li>
+</ul>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.top {
+		&__links {
+			display: flex;
+			justify-content: space-between;
+			padding-right: 1rem;
+		}
+
+		&__link {
+			position: relative;
+			&::after {
+				content: '';
+				background-image: url('@assets/icons/keyboard_arrow_down_FILL0_wght400_GRAD0_opsz24.svg');
+				background-repeat: no-repeat;
+				width: 1.5rem;
+				height: 1rem;
+				position: absolute;
+			}
+
+			a {
+				position: relative;
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: -5px;
+					left: 0;
+					width: 0;
+					height: 1px;
+					background-color: $__primary;
+					transition: width 250ms ease;
+				}
+
+				&:hover::after {
+					width: calc(100% + 1rem);
+				}
+			}
+		}
+	}
+</style>

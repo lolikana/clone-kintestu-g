@@ -21,7 +21,7 @@ $__breakpoints: (
 }
 
 @mixin font-responsive($min, $max) {
-	font-size: calc(#{$min}rem + (#{$max} - #{$min}) * ((100vw - 375px) / (1600 - 375)));
+	font-size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - 375px) / (1600 - 375)));
 }
 
 // Define vertical, horizontal, or both position
