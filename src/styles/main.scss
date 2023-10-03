@@ -34,16 +34,8 @@ main {
 	text-align: justify;
 }
 
-h2 {
-	text-align: center;
-	font-size: $__font40;
-	font-weight: 100;
-	font-family: 'Barlow Condensed', sans-serif;
-	margin-bottom: 1.5rem;
-
-	@include mq(md) {
-		font-size: $__font80;
-	}
+section {
+	margin: 5rem 0;
 }
 
 .eng-text {
@@ -52,4 +44,12 @@ h2 {
 
 .italic {
 	font-style: italic;
+}
+
+.break-line {
+	white-space: -moz-pre-wrap; /* Firefox */
+	white-space: -pre-wrap; /* ancient Opera */
+	white-space: -o-pre-wrap; /* newer Opera */
+	white-space: pre-wrap; /* Chrome; W3C standard */
+	word-wrap: break-word; /* IE */
 }

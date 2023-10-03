@@ -1,0 +1,45 @@
+---
+import Title from '@components/common/SectionsTitle.astro';
+
+import TopicsCard from './TopicsCard.astro';
+---
+
+<section class="section-top" id="section-topics">
+	<Title
+		title={'Topics'}
+		subtitles={['近鉄が取り組む', 'デジタルトランスフォーメーション']}
+	/>
+	<div class="topics__card">
+		<TopicsCard />
+	</div>
+</section>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.topics__card {
+		position: relative;
+		padding: 2rem;
+
+		&::after {
+			content: '';
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: $__grey500;
+			width: 100%;
+			height: 100%;
+		}
+		@include mq(md) {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 0 5rem 3rem 0;
+
+			&::after {
+				-webkit-clip-path: polygon(8% 0, 100% 0, 95% 100%, 3% 90%);
+				clip-path: polygon(8% 0, 100% 0, 95% 100%, 3% 90%);
+			}
+		}
+	}
+</style>

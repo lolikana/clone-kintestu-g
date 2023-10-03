@@ -1,0 +1,56 @@
+---
+type Props = { title: string; subtitles?: string[]; left?: boolean };
+
+const { title, subtitles, left } = Astro.props;
+---
+
+<div class="container">
+	<h2 class=`title eng-text ${left ? 'left' : null}`>{title}</h2>
+	{
+		subtitles && (
+			<h3 class="subtitle">
+				{subtitles.map(subtitle => (
+					<span>{subtitle}</span>
+				))}
+			</h3>
+		)
+	}
+</div>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.container {
+		margin-bottom: 1.5rem;
+		text-align: center;
+	}
+
+	.title {
+		font-size: $__font40;
+		font-weight: 100;
+		font-family: 'Barlow Condensed', sans-serif;
+
+		@include mq(md) {
+			font-size: $__font80;
+		}
+	}
+
+	.title.left {
+		text-align: left;
+
+		@include mq(md) {
+			text-align: center;
+		}
+	}
+
+	.subtitle {
+		font-size: $__font13;
+		font-weight: 600;
+		display: flex;
+		flex-direction: column;
+
+		@include mq(md) {
+			font-size: $__font16;
+		}
+	}
+</style>

@@ -1,0 +1,132 @@
+---
+import Photo01 from '@assets/images/topics/photo01.png';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface ITopicsCard {
+	image: { src: ImageMetadata; alt: string };
+	title: string;
+	subtitle: string;
+	text: string;
+}
+
+const topicsData: ITopicsCard[] = [
+	{
+		image: { src: Photo01, alt: 'Digital ticket machine' },
+		title: 'Digital ticket',
+		subtitle: 'デジタル乗車券（QRコードの活用）',
+		text: '2022年春よりQRコードを活用したデジタル乗車券を発売。お客さまには販売サイトで事前にデジタル乗車券を購入いただき、スマートフォンに表示されるQRコードを改札にかざしていただくことで、シームレスな乗車体験をお届けします。\n 将来的には、旅行会社等と販売システムを連携することで、販路を拡大できるだけでなく、キャッシュレス化の推進による業務効率化など、社内外に影響のある取り組みです。（※QRコードは、㈱デンソーウェーブの登録商標です。）'
+	}
+];
+---
+
+{
+	topicsData.map((data, index) => (
+		<div class="card">
+			<div class="card__image">
+				<Image src={data.image.src} alt={data.image.alt} />
+			</div>
+			<div class="card__content">
+				<div class="card__topics eng-text">
+					<div class="card__topics_titles">
+						<p>Kintetsu Holdings</p>
+						<p>Recent Topics</p>
+					</div>
+					<span class="card__topics_number">#0{index + 1}</span>
+				</div>
+				<div class="card__text break-line">
+					<h3 class="card__text_title eng-text">{data.title}</h3>
+					<h3 class="card__text_subtitle">{data.subtitle}</h3>
+					<p class="card__text_text">{data.text}</p>
+				</div>
+			</div>
+		</div>
+	))
+}
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.card {
+		color: $__sub;
+	}
+
+	.card__image {
+		padding: 0 1rem 1rem;
+	}
+
+	.card__topics {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 0.75rem;
+	}
+
+	.card__topics {
+		&_titles {
+			font-size: $__font13;
+			font-weight: 400;
+			display: flex;
+			flex-direction: column;
+			gap: 0.25rem;
+		}
+
+		&_number {
+			font-size: $__font24;
+			font-weight: 200;
+			border-left: 1px dotted $__sub;
+			padding: 0 2rem;
+		}
+	}
+
+	.card__text {
+		&_title {
+			font-size: $__font24;
+			font-weight: 300;
+			margin-bottom: 0.5rem;
+		}
+
+		&_subtitle {
+			font-weight: 500;
+			margin-bottom: 1rem;
+		}
+
+		&_text {
+			font-weight: 600;
+			font-size: $__font13;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.card {
+			display: flex;
+			align-items: center;
+		}
+
+		.card__image,
+		.card__content {
+			flex: 1;
+		}
+
+		.card__topics {
+			&_number {
+				font-size: $__font48;
+			}
+		}
+
+		.card__text {
+			&_title {
+				font-size: $__font30;
+			}
+
+			&_subtitle {
+				font-size: $__font20;
+			}
+
+			&_text {
+				font-size: $__font16;
+				font-weight: 400;
+			}
+		}
+	}
+</style>
