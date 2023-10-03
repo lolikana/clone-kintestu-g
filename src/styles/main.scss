@@ -43,7 +43,6 @@ h2 {
 
 	@include mq(md) {
 		font-size: $__font80;
-		text-align: left;
 	}
 }
 

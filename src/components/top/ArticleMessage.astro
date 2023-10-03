@@ -7,7 +7,7 @@ const { class: top__index, ...attributes } = Astro.props;
 	class:list={[top__index, 'article-message']}
 	{...attributes}
 >
-	<h2 class="eng-text">Message</h2>
+	<h2 class="article-message__title eng-text">Message</h2>
 	<div class="article-message__text">
 		<p>
 			運輸、不動産、流通、ホテル・レジャーなど暮らしにかかわる多様な事業を展開する近鉄グループ。今後さらに皆さまの日々の暮らしを豊かにしていくには。この問いに対する取り組みの一つとして、私たちはDX（デジタルトランスフォーメーション）による新規事業・サービスの創出を推進します。
@@ -22,6 +22,14 @@ const { class: top__index, ...attributes } = Astro.props;
 	@import '@styles/config';
 
 	.article-message {
+		&__title {
+			text-align: center;
+
+			@include mq(md) {
+				text-align: left;
+			}
+		}
+
 		&__text {
 			font-size: $__font13;
 
