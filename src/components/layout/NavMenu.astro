@@ -41,7 +41,6 @@
 	@import '@styles/config';
 
 	.nav {
-		z-index: 1000;
 		width: 100%;
 		position: absolute;
 		left: 0;
@@ -65,6 +64,8 @@
 	}
 
 	.nav[aria-expanded='true'] {
+		z-index: 1000;
+		position: fixed;
 		height: calc(100vh - $__header_desktop_height);
 		transition-delay: height 250ms;
 		top: $__header_desktop_height;
