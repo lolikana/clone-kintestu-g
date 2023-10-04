@@ -23,6 +23,11 @@
 	menuBtn.addEventListener('click', () => {
 		if (!menuOpen) {
 			toggleMenu(true);
+			menuBtn.classList.add('pulse');
+
+			menuBtn.addEventListener('animationend', () => {
+				menuBtn.classList.remove('pulse');
+			});
 		} else {
 			toggleMenu(false);
 		}
@@ -39,6 +44,7 @@
 	@import '@styles/config';
 
 	.menu-btn {
+		position: relative;
 		background-color: $__main;
 		border-radius: 50%;
 		display: flex;
@@ -46,8 +52,6 @@
 		align-items: center;
 		width: 48px;
 		height: 48px;
-		top: 2rem;
-		right: 2rem;
 		cursor: pointer;
 		transition: all 0.5s ease-in-out;
 	}
