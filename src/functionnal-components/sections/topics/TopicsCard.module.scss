@@ -1,0 +1,105 @@
+@import '@styles/config';
+
+.card {
+	color: $__sub;
+	padding: 2rem;
+}
+
+.card__image {
+	padding: 0 3rem 1rem;
+	margin: 0 auto;
+	max-width: 390px;
+}
+
+.card__content {
+	padding: 0 3rem;
+}
+
+.card__topics {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.75rem;
+}
+
+.card__topics {
+	&_titles {
+		font-size: $__font13;
+		font-weight: 400;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	&_number {
+		font-size: $__font24;
+		font-weight: 200;
+		border-left: 1px dotted $__sub;
+		padding: 0 2rem;
+	}
+}
+
+.card__text {
+	display: block;
+
+	&_title {
+		font-size: $__font24;
+		font-weight: 300;
+		margin-bottom: 0.5rem;
+	}
+
+	&_subtitle {
+		font-weight: 500;
+		margin-bottom: 1rem;
+	}
+
+	&_text {
+		font-weight: 600;
+		font-size: $__font13;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.card {
+		display: flex;
+		align-items: center;
+		padding: 0 5rem 3rem;
+	}
+
+	.card__content {
+		padding: 1rem;
+	}
+
+	.card__image {
+		max-width: none;
+		min-width: 350px;
+		margin-top: 1rem;
+		padding: 1rem;
+	}
+
+	.card__image,
+	.card__content {
+		flex: 1;
+	}
+
+	.card__topics {
+		&_number {
+			font-size: $__font48;
+		}
+	}
+
+	.card__text {
+		&_title {
+			font-size: $__font30;
+		}
+
+		&_subtitle {
+			font-size: $__font20;
+		}
+
+		&_text {
+			font-size: $__font16;
+			font-weight: 400;
+		}
+	}
+}

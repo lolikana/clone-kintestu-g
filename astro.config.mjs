@@ -13,7 +13,8 @@ export default defineConfig({
 				'@components': '/src/components',
 				'@layouts': '/src/layouts',
 				'@styles': '/src/styles',
-				'@assets': '/src/assets'
+				'@assets': '/src/assets',
+				'@scripts': '/src/scripts'
 			}
 		}
 	},

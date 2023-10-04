@@ -1,0 +1,28 @@
+@import '@styles/config';
+
+.topics {
+	position: relative;
+
+	margin: 0 -2rem;
+
+	&::after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 1rem;
+		left: 3rem;
+		background-color: $__grey500;
+		width: calc(100% - 6rem);
+		height: 95%;
+	}
+
+	@include mq(custom860) {
+		max-width: 1000px;
+		margin: 0 auto;
+
+		&::after {
+			-webkit-clip-path: polygon(8% 0, 100% 0, 95% 100%, 3% 90%);
+			clip-path: polygon(15% 0, 100% 0, 95% 100%, 3% 90%);
+		}
+	}
+}

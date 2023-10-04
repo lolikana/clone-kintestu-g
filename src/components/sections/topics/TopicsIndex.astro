@@ -1,45 +1,34 @@
 ---
+import Photo01 from '@assets/images/topics/photo01.png';
+import Photo02 from '@assets/images/topics/photo02.png';
 import Title from '@components/common/SectionsTitle.astro';
+import SwiperTopics from 'src/functionnal-components/sections/topics/SwiperTopics';
+import type { ITopicsCard } from 'src/types';
 
-import TopicsCard from './TopicsCard.astro';
+const topicsData: ITopicsCard[] = [
+	{
+		image: { src: Photo01, alt: 'Digital ticket machine' },
+		title: 'Digital ticket',
+		subtitle: 'デジタル乗車券（QRコードの活用）',
+		text: '2022年春よりQRコードを活用したデジタル乗車券を発売。お客さまには販売サイトで事前にデジタル乗車券を購入いただき、スマートフォンに表示されるQRコードを改札にかざしていただくことで、シームレスな乗車体験をお届けします。\n 将来的には、旅行会社等と販売システムを連携することで、販路を拡大できるだけでなく、キャッシュレス化の推進による業務効率化など、社内外に影響のある取り組みです。（※QRコードは、㈱デンソーウェーブの登録商標です。）'
+	},
+	{
+		image: { src: Photo02, alt: 'pamphlet Mobility as a Service application' },
+		title: 'Mobility as a Service',
+		subtitle: 'MaaS',
+		text: 'MaaSとは複数の移動サービスを最適に組み合わせて、検索・予約・決済等を一括で行うサービス。移動の利便性向上や地域の課題解決にも資する重要な手段です。当社では、2019年度に沿線の重要観光地である伊勢志摩エリアの志摩地域において、観光型MaaSの実証実験を行いました。オンデマンドのバス・船・タクシーを整備したほか、開発したMaaSアプリ「ぶらりすと」上でフリーパスや旅行商品を販売。この実験は国土交通省により「新モビリティサービス推進事業」の「先行モデル事業」に選定されました。今後も近鉄グループでは、MaaS実現に向けた取り組みを進めます。'
+	}
+];
 ---
 
-<section class="section-top" id="section-topics">
+<section class="section-topics" id="section-topics">
 	<Title
 		title={'Topics'}
 		subtitles={['近鉄が取り組む', 'デジタルトランスフォーメーション']}
 	/>
-	<div class="topics__card">
-		<TopicsCard />
-	</div>
+	<SwiperTopics client:load data={topicsData} />
 </section>
 
 <style lang="scss">
 	@import '@styles/config';
-
-	.topics__card {
-		position: relative;
-		padding: 2rem;
-
-		&::after {
-			content: '';
-			z-index: -1;
-			position: absolute;
-			top: 0;
-			left: 0;
-			background-color: $__grey500;
-			width: 100%;
-			height: 100%;
-		}
-		@include mq(md) {
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 0 5rem 3rem 0;
-
-			&::after {
-				-webkit-clip-path: polygon(8% 0, 100% 0, 95% 100%, 3% 90%);
-				clip-path: polygon(8% 0, 100% 0, 95% 100%, 3% 90%);
-			}
-		}
-	}
 </style>
