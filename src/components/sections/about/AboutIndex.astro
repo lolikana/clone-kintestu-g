@@ -1,14 +1,94 @@
 ---
+import Photo01 from '@assets/images/works/photo01.jpg';
+import Photo02 from '@assets/images/works/photo02.jpg';
+import Photo03 from '@assets/images/works/photo03.jpg';
+import Photo04 from '@assets/images/works/photo04.jpg';
+import Photo05 from '@assets/images/works/photo05.jpg';
+import Photo06 from '@assets/images/works/photo06.jpg';
+import Photo07 from '@assets/images/works/photo07.jpg';
 import SectionLayout from '@layouts/SectionLayout.astro';
+import type { ImageMetadata } from 'astro';
 
 import AboutInfo from './AboutInfo.astro';
 import AboutLinks from './AboutLinks.astro';
+
+export type TAboutInfoCardData = {
+	image: {
+		src: ImageMetadata;
+		alt: string;
+	};
+	title: string;
+	text: string;
+};
+
+type TAboutData = {
+	contentTitle: string;
+	contentText: string;
+	infoTitle: string;
+	infoSubtitle?: string;
+	infoData: TAboutInfoCardData[];
+};
+
+const aboutData: TAboutData[] = [
+	{
+		contentTitle: '主な業務内容',
+		contentText:
+			'主な業務は、近鉄グループホールディングスのDX担当部署での業務と、近鉄グループ各社に出向して取り組む業務の２つに大きく分かれます。近鉄グループ全体の連携で総合力を発揮しながらプロジェクトを推進していきます。',
+		infoTitle: '近鉄グループホールディングス',
+		infoSubtitle: '事業戦略部',
+		infoData: [
+			{
+				image: { src: Photo01, alt: '' },
+				title: 'DXビジョン・戦略策定',
+				text: '様々な事業を展開する近鉄グループが、より体系的にDXを推進できるよう、グループ共通のDXビジョン・戦略を策定。既存の概念にとらわれない、広い視野で近鉄グループの未来を考えます。'
+			},
+			{
+				image: { src: Photo02, alt: '' },
+				title: 'IT環境整備',
+				text: '社員の働き方改革を実現するため、職場環境のITインフラ選定から設計まで関わります。業務の効率化はもちろん、柔軟な働き方を実現することで社員のパフォーマンスを最大限に引き出す新たな環境作りを目指します。'
+			},
+			{
+				image: { src: Photo03, alt: '' },
+				title: '事業部門業務効率化',
+				text: '各事業の業務効率化、生産性向上につながるIT施策の検討・立案などを行います。ペーパーレス化やシステム化など、業務プロセスの抜本的な見直しなども行いながらIT化を推進しています'
+			},
+			{
+				image: { src: Photo04, alt: '' },
+				title: 'DXビジョン・戦略策定',
+				text: '当社が保有する様々なデータを有効活用していく方法を検討する業務です。お客様の多様なニーズを正確かつ迅速に把握し、求められるサービスを提供するとともに、グループ各社でデータを活用した経営の実現に向けて取り組んでいます'
+			}
+		]
+	},
+	{
+		contentTitle: '主な業務内容',
+		contentText:
+			'主な業務は、近鉄グループホールディングスのDX担当部署での業務と、近鉄グループ各社に出向して取り組む業務の２つに大きく分かれます。近鉄グループ全体の連携で総合力を発揮しながらプロジェクトを推進していきます。',
+		infoTitle: '近鉄情報システム',
+		infoData: [
+			{
+				image: { src: Photo05, alt: '' },
+				title: 'システム設計',
+				text: '業務を行うための機能や仕様、処理フローを記載した設計書を作成します。運用する上で不便な部分の改善や、不要な機能の削除も同時に検討し、設計書に反映していきます。'
+			},
+			{
+				image: { src: Photo06, alt: '' },
+				title: 'システム製造',
+				text: '作成した設計書をもとに、プログラミングによるシステム構築を進めていきます。現システムと同等の動作をしながら、アクシデントが起きた時の保守性も考慮しつつ、改善も加えられた新システムを完成させます。'
+			},
+			{
+				image: { src: Photo07, alt: '' },
+				title: 'システムの動作確認',
+				text: '構築したシステムの動作確認では、お客様や従業員の皆さまなど使う方の目線で検証を繰り返し、正しく動作することを確認していきます。品質を保証し、安心して利用できるシステムを目指します。'
+			}
+		]
+	}
+];
 ---
 
 <SectionLayout title="About" subtitles={['企業情報']}>
 	<div class="about">
 		<AboutLinks />
-		<AboutInfo class="about__info" />
+		{aboutData.map(data => <AboutInfo class="about__info" {...data} />)}
 	</div>
 </SectionLayout>
 

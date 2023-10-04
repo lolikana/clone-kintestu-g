@@ -1,0 +1,76 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+type Props = {
+	image: {
+		src: ImageMetadata;
+		alt: string;
+	};
+	title: string;
+	text: string;
+};
+
+const { image, title, text } = Astro.props;
+---
+
+<div class="about__card">
+	<div class="about__card_image">
+		<Image src={image.src} alt={image.alt} />
+	</div>
+	<div class="about__card_content">
+		<h6 class="about__card_title">{title}</h6>
+		<p class="about__card_text">{text}</p>
+	</div>
+</div>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.about__card {
+		border: 1px solid #000;
+		padding: 2rem;
+		height: 375px;
+	}
+
+	.about__card,
+	.about__card_content {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.about__card_image {
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.about__card_title {
+		text-align: center;
+		font-size: $__font14;
+		font-weight: 600;
+	}
+
+	.about__card_text {
+		font-size: $__font12;
+	}
+
+	@media screen and (min-width: 768px) {
+		.about__card {
+			min-width: 20%;
+			max-width: 40%;
+			height: auto;
+			flex: 1 0 40%;
+			padding: 1rem;
+		}
+
+		.about__card_image {
+			height: auto;
+			max-height: 250px;
+		}
+
+		.about__card_text {
+			font-size: $__font14;
+		}
+	}
+</style>

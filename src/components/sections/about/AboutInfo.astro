@@ -1,23 +1,44 @@
 ---
+import type { TAboutInfoCardData } from './AboutIndex.astro';
+import AboutInfoCard from './AboutInfoCard.astro';
+
+type Props = {
+	class: string;
+	contentTitle: string;
+	contentText: string;
+	infoTitle: string;
+	infoSubtitle?: string;
+	infoData: TAboutInfoCardData[];
+};
+
+const { contentTitle, contentText, infoTitle, infoSubtitle, infoData } = Astro.props;
 const { class: about__index, ...attributes } = Astro.props;
 ---
 
 <div class="about__content">
-	<h3 class="about__content_title">主な業務内容</h3>
+	<h3 class="about__content_title">{contentTitle}</h3>
 	<p>
-		主な業務は、近鉄グループホールディングスのDX担当部署での業務と、近鉄グループ各社に出向して取り組む業務の２つに大きく分かれます。近鉄グループ全体の連携で総合力を発揮しながらプロジェクトを推進していきます。
+		{contentText}
 	</p>
 </div>
 <div class:list={[about__index, 'about__info']} {...attributes}>
 	<h4 class="about__info_title">
-		近鉄グループホールディングス
-		<br />事業戦略部
+		{infoTitle}
+		<br />{infoSubtitle}
 	</h4>
 	<h5 class="about__info_subtitle">主な業務</h5>
+	<div class="about__info_cards">
+		{infoData.map(data => <AboutInfoCard {...data} />)}
+	</div>
 </div>
 
 <style lang="scss">
 	@import '@styles/config';
+	.about__content,
+	.about__info {
+		color: #000;
+	}
+
 	.about__content {
 		&_title {
 			text-align: center;
@@ -45,12 +66,23 @@ const { class: about__index, ...attributes } = Astro.props;
 		}
 	}
 
+	.about__info_cards {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
 	@media screen and (min-width: 768px) {
 		.about__content,
 		.about__info {
+			text-align: center;
+		}
+
+		.about__content,
+		.about__info_title,
+		.about__info_subtitle {
 			margin: 0 auto;
 			width: 600px;
-			text-align: center;
 		}
 
 		.about__content {
@@ -64,6 +96,12 @@ const { class: about__index, ...attributes } = Astro.props;
 			&_subtitle {
 				font-size: $__font20;
 			}
+		}
+
+		.about__info_cards {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 	}
 </style>
