@@ -1,0 +1,12 @@
+---
+import Title from '@components/common/SectionsTitle.astro';
+
+type Props = { title: string; subtitles?: string[]; left?: boolean };
+
+const { title, subtitles, left } = Astro.props;
+---
+
+<section class=`section-${title.toLowerCase()}` id=`section-${title.toLowerCase()}`>
+	<Title title={title} subtitles={subtitles} left={left} />
+	<slot />
+</section>
