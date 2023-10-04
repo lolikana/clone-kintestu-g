@@ -1,33 +1,14 @@
 ---
 import SectionLayout from '@layouts/SectionLayout.astro';
+
+import AboutInfo from './AboutInfo.astro';
+import AboutLinks from './AboutLinks.astro';
 ---
 
 <SectionLayout title="About" subtitles={['企業情報']}>
 	<div class="about">
-		<ul class="about__links">
-			<li class="about__link">
-				<a href="/">
-					<div class="about__link_text">
-						<span class="eng-text">Company Profile</span><span>会社概要</span>
-					</div>
-					<span class="about__link_arrow next-arrow"></span>
-				</a>
-			</li>
-			<li class="about__link">
-				<a href="/">
-					<div class="about__link_text">
-						<span class="eng-text">Business Field</span><span>事業紹介</span>
-					</div>
-					<span class="about__link_arrow next-arrow"></span>
-				</a>
-			</li>
-		</ul>
-		<div class="about__text">
-			<h3 class="about__text_title">主な業務内容</h3>
-			<p>
-				主な業務は、近鉄グループホールディングスのDX担当部署での業務と、近鉄グループ各社に出向して取り組む業務の２つに大きく分かれます。近鉄グループ全体の連携で総合力を発揮しながらプロジェクトを推進していきます。
-			</p>
-		</div>
+		<AboutLinks />
+		<AboutInfo class="about__info" />
 	</div>
 </SectionLayout>
 
@@ -35,75 +16,12 @@ import SectionLayout from '@layouts/SectionLayout.astro';
 	@import '@styles/config';
 	.about {
 		margin: 5rem 0;
+	}
+
+	.about,
+	.about__info {
 		display: flex;
 		flex-direction: column;
-		gap: 5rem;
-	}
-
-	.about__link {
-		width: 100%;
-		margin-bottom: 2rem;
-
-		a {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: center;
-			padding-bottom: 1rem;
-
-			@include underline($__width: 100%, $__margin: 0 0 0 0, $__bottom: 0);
-
-			&::after {
-				height: 3px;
-				background-color: $__tertiary;
-			}
-
-			&:hover {
-				&::after {
-					background-color: $__main;
-				}
-
-				.about__link_arrow {
-					background-color: $__main;
-
-					&::after {
-						filter: $__filter_white;
-					}
-				}
-			}
-		}
-
-		.about__link_text {
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-		}
-
-		.about__link_arrow {
-			position: relative;
-			width: 1.5rem;
-			height: 1.5rem;
-			border-radius: 50%;
-			border: 1px solid $__main;
-
-			&::after {
-				filter: $__filter_main;
-				background-size: 1rem;
-				inset: 0.5rem 0 0 0;
-				margin: auto;
-			}
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		.about__links {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 1rem;
-		}
-
-		.about__link {
-			flex: 1 0 calc(25% - 10px);
-		}
+		gap: 3rem;
 	}
 </style>
