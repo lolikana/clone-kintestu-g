@@ -53,3 +53,14 @@ section {
 	white-space: pre-wrap; /* Chrome; W3C standard */
 	word-wrap: break-word; /* IE */
 }
+
+.next-arrow::after {
+	content: '';
+	background-image: url('@assets/icons/navigate_next_FILL0_wght400_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	width: 1rem;
+	height: 1.5rem;
+	position: absolute;
+	top: -0.15rem;
+	right: 1rem;
+}
