@@ -2,7 +2,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import TopicsCard from '@components/sections/topics/TopicsCard.astro';
+import TopicsCard from '@functionnal-components/sections/topics/TopicsCard';
 import type { FC } from 'react';
 import type { ITopicsCard } from 'src/types';
 import { Navigation, Pagination } from 'swiper/modules';
