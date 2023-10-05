@@ -1,5 +1,5 @@
-import ImageProfile01 from '@assets/images/peoples/pp01.jpg';
-import ImageContent01 from '@assets/images/peoples/pp02.jpg';
+import ImageProfile01 from '@assets/images/peoples/pp01.avif';
+import ImageContent01 from '@assets/images/peoples/pp02.avif';
 import ImageProfile02 from '@assets/images/peoples/pp03.jpg';
 import ImageContent02 from '@assets/images/peoples/pp04.jpg';
 import ImageProfile03 from '@assets/images/peoples/pp05.avif';

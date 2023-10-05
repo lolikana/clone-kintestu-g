@@ -7,11 +7,9 @@ import { Image } from 'astro:assets';
 <header class="header">
 	<div class="header__logo">
 		<a href="/" class="logo__link">
-			<Image
-				src={Logo}
-				alt="近鉄グループホールティングス 情報系 新卒採用ページ"
-				class="logo__link_image"
-			/>
+			<div class="logo__link_image">
+				<Image src={Logo} alt="近鉄グループホールティングス 情報系 新卒採用ページ" />
+			</div>
 			<p class="logo__link_text">情報系 新卒採用ページ</p>
 		</a>
 	</div>
@@ -44,11 +42,21 @@ import { Image } from 'astro:assets';
 		padding: 20px 15px;
 	}
 
+	.header__logo,
+	.logo__link,
+	.logo__link_image {
+		height: 100%;
+	}
+
 	.logo__link {
 		display: block;
 		&_image {
-			width: 200px;
 			margin-bottom: 0.25rem;
+			display: flex;
+			img {
+				height: 100%;
+				width: fit-content;
+			}
 		}
 
 		&_text {
@@ -97,8 +105,6 @@ import { Image } from 'astro:assets';
 			gap: 1rem;
 
 			&_image {
-				width: 100%;
-				max-width: 350px;
 				margin-bottom: 0;
 			}
 
