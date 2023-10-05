@@ -1,0 +1,168 @@
+---
+import type { TPeoples } from '@libs/types';
+import { Image } from 'astro:assets';
+
+type Props = {
+	data: TPeoples;
+};
+
+const { data } = Astro.props;
+---
+
+<li class="peoples__card">
+	<div class="peoples__card_top">
+		<figure class={'peoples__card_figure'}>
+			<div class="figure__image">
+				<Image src={data.top.imageProfile.src} alt={data.top.imageProfile.alt} />
+			</div>
+			<figcaption class={'peoples__card_figcaption'}>
+				{data.top.infoProfile.entry}
+				<br />
+				{data.top.infoProfile.position}
+				<br />
+				{data.top.infoProfile.office}
+			</figcaption>
+		</figure>
+		<div class="peoples__card_info">
+			{
+				data.top.addInfo.map(info => (
+					<>
+						<h4 class="info__title">{info.title}</h4>
+						<p class="info__text">{info.text}</p>
+					</>
+				))
+			}
+		</div>
+	</div>
+	<div class="peoples__card_bottom">
+		<figure class={'peoples__card_figure'}>
+			<div class="figure__image">
+				<Image src={data.bottom.imageContent.src} alt={data.bottom.imageContent.alt} />
+			</div>
+		</figure>
+		<div class="peoples__card_info">
+			{
+				data.bottom.addInfo.map(info => (
+					<>
+						<h4 class="info__title">{info.title}</h4>
+						<p class="info__text">{info.text}</p>
+					</>
+				))
+			}
+		</div>
+	</div>
+</li>
+
+<style lang="scss">
+	@import '@styles/config';
+	.peoples__card {
+		&:nth-child(even) figcaption {
+			background-color: $__secondary;
+		}
+	}
+
+	.peoples__card {
+		&_figcaption {
+			text-align: center;
+			color: $__sub;
+			background-color: $__main;
+			font-weight: 500;
+			padding: 1rem 0;
+			line-height: 2;
+		}
+
+		.info__title,
+		.info__text {
+			font-size: $__font14;
+		}
+
+		.peoples__card_figure,
+		.info__title,
+		.info__text,
+		.info__image {
+			margin-bottom: 1rem;
+		}
+
+		.info__title {
+			font-weight: 600;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.peoples__card {
+			&_top {
+				margin-bottom: 2rem;
+			}
+
+			&_top,
+			&_bottom {
+				display: flex;
+			}
+		}
+
+		.peoples__card:nth-of-type(odd) {
+			.peoples__card_top {
+				> .peoples__card_figure {
+					order: 1;
+				}
+				> .peoples__card_info {
+					order: 2;
+				}
+			}
+			.peoples__card_bottom {
+				> .peoples__card_figure {
+					order: 2;
+				}
+			}
+		}
+
+		.peoples__card:nth-of-type(even) {
+			.peoples__card_top {
+				> .peoples__card_figure {
+					order: 2;
+				}
+				> .peoples__card_info {
+					order: 1;
+				}
+			}
+		}
+
+		.peoples__card_figure {
+			flex: 45%;
+		}
+
+		.peoples__card_info {
+			flex: 55%;
+		}
+
+		.peoples__card {
+			&_figure {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.figure__image {
+					width: 50%;
+					height: 250px;
+
+					img {
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+			}
+
+			&_figcaption {
+				position: relative;
+				font-size: $__font14;
+				padding: 1rem 1rem;
+				bottom: 2rem;
+				width: 45%;
+				min-width: fit-content;
+				max-height: 50%;
+				opacity: 0.9;
+			}
+		}
+	}
+</style>
