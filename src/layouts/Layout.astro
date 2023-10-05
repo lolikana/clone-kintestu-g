@@ -4,6 +4,7 @@ import '@styles/main.scss';
 import Footer from '@components/layout/Footer.astro';
 import Header from '@components/layout/Header.astro';
 import NavMenu from '@components/layout/NavMenu.astro';
+import Particules from '@components/ui/Particules.astro';
 
 const { headTitle } = Astro.props;
 ---
@@ -30,6 +31,7 @@ const { headTitle } = Astro.props;
 		<title>{headTitle}</title>
 	</head>
 	<body>
+		<Particules />
 		<Header />
 		<NavMenu />
 		<main>
