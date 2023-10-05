@@ -68,3 +68,13 @@ section {
 	top: -0.15rem;
 	right: 1rem;
 }
+
+.check-icon::before {
+	content: '';
+	background-image: url('@assets/icons/check_small_FILL0_wght400_GRAD0_opsz24.svg');
+	background-repeat: no-repeat;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	left: -2.5rem;
+}

@@ -6,6 +6,17 @@ import PeoplesCard from './PeoplesCard.astro';
 ---
 
 <SectionLayout title="Peoples" subtitles={['働く社員の姿']}>
+	<div class="peoples__top">
+		<h3 class="peoples__top_title">求める人材像</h3>
+		<ul class="peoples__top_list">
+			<li class="list__item check-icon">何かおもしろいことはないか常に考えている</li>
+			<li class="list__item check-icon">簡単には諦めず、最後までやり遂げる</li>
+			<li class="list__item check-icon">地域への貢献を意識しながら、収益を生み出せる</li>
+			<li class="list__item check-icon">
+				デジタル技術への好奇心が強く、専門的知識を持っている
+			</li>
+		</ul>
+	</div>
 	<ul class="peoples__cards">
 		{peoplesData.map(data => <PeoplesCard data={data} />)}
 	</ul>
@@ -13,6 +24,65 @@ import PeoplesCard from './PeoplesCard.astro';
 
 <style lang="scss">
 	@import '@styles/config';
+	.peoples__top {
+		font-size: $__font14;
+		@include mq('md') {
+			font-size: $__font16;
+		}
+
+		font-weight: 600;
+		max-width: 800px;
+		margin: 3rem auto;
+		border: 1px solid #000;
+		padding: 2rem 3rem 2rem 5rem;
+		position: relative;
+	}
+
+	.peoples__top_title {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 0.25rem 1rem;
+		color: $__sub;
+		background: $__linear_colorfull;
+	}
+
+	.peoples__top_list {
+		width: fit-content;
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		gap: 1rem;
+
+		.list__item {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				left: -2.75rem;
+				top: 0;
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+
+			&::before {
+				background-image: $__linear_colorfull2;
+				background-size: cover;
+				border-radius: 5px;
+			}
+
+			&::after {
+				background-image: url('@assets/icons/check_small_FILL0_wght400_GRAD0_opsz24.svg');
+				filter: $__filter_white;
+			}
+		}
+	}
+
 	.peoples__cards {
 		color: #000;
 		display: flex;

@@ -13,6 +13,14 @@ $__filter_main: invert(17%) sepia(73%) saturate(2486%) hue-rotate(211deg) bright
 $__filter_white: invert(100%) sepia(1%) saturate(0%) hue-rotate(8deg) brightness(110%)
 	contrast(100%);
 
+$__linear_colorfull: linear-gradient(111deg, rgb(4, 49, 150) 0%, rgb(219, 60, 134) 100%)
+	0% 0% no-repeat padding-box padding-box transparent;
+$__linear_colorfull2: linear-gradient(
+	127deg,
+	rgb(244, 90, 162) 0%,
+	rgba(4, 49, 150) 100%
+);
+
 $__grey50: #fafafa;
 $__grey100: #f9f9f9;
 $__grey200: #eeeeee;
