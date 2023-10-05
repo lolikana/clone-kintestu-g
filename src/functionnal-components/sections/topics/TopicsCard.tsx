@@ -18,7 +18,7 @@ const TopicsCard: FC<Props> = props => {
 			<div className={styles.card__content}>
 				<div className={`${styles['card__topics']} eng-text`}>
 					<div className={styles.card__topics_titles}>
-						<p>Kintetsu Holdings</p>
+						<p>Paw Dog Holdings</p>
 						<p>Recent Topics</p>
 					</div>
 					<span className={styles.card__topics_number}>#0{index + 1}</span>

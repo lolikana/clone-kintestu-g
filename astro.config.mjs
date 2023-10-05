@@ -25,5 +25,5 @@ export default defineConfig({
 		remotePatterns: [{ protocol: 'https' }]
 	},
 	site: import.meta.env.PROD ? 'https://lolikana.github.io' : undefined,
-	base: import.meta.env.PROD ? '/kintetsu-g' : undefined
+	base: import.meta.env.PROD ? '/pawdog-g' : undefined
 });
