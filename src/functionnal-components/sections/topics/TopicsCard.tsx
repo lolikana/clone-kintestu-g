@@ -1,5 +1,5 @@
+import type { ITopicsCard } from '@libs/types';
 import { type FC } from 'react';
-import type { ITopicsCard } from 'src/types';
 
 import styles from './TopicsCard.module.scss';
 

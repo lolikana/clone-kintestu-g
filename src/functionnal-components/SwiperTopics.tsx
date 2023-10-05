@@ -3,8 +3,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import TopicsCard from '@functionnal-components/sections/topics/TopicsCard';
+import type { ITopicsCard } from '@libs/types';
 import type { FC } from 'react';
-import type { ITopicsCard } from 'src/types';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

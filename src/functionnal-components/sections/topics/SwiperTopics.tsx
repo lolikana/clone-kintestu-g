@@ -4,8 +4,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './swiper.scss';
 
+import type { ITopicsCard } from '@libs/types';
 import type { FC } from 'react';
-import type { ITopicsCard } from 'src/types';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
