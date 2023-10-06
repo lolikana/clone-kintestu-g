@@ -64,39 +64,47 @@ const { headTitle } = Astro.props;
 <style lang="scss">
 	@import '@styles/config';
 	.return-top-btn {
-		height: 0;
-		overflow: hidden;
-		opacity: 0;
 		position: fixed;
 		bottom: 0;
 		right: 0;
 		color: $__sub;
-		width: 4rem;
-		padding: 1rem 0.5rem;
+		width: 0rem;
 		background-color: $__main;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		transition:
-			opacity 500ms ease,
-			500ms height 501ms ease;
+
+		&[aria-hidden='true'] {
+			z-index: -10;
+			width: 0;
+			height: 0;
+			overflow: hidden;
+			opacity: 0;
+			transition:
+				opacity 1s ease,
+				1.2s z-index 1s,
+				1.2s width 1s,
+				1.2s height 1s;
+		}
 
 		&[aria-hidden='false'] {
 			z-index: 1001;
 			height: 4rem;
+			width: 4rem;
+			padding: 1rem 0.5rem;
 			opacity: 1;
-			transition: opacity 500ms ease;
-		}
+			transition: opacity 1s ease;
 
-		&::after {
-			content: '';
-			background-image: url('@assets/icons/keyboard_arrow_up_FILL0_wght400_GRAD0_opsz24.svg');
-			background-repeat: no-repeat;
-			position: absolute;
-			background-size: 32px;
-			width: 32px;
-			height: 32px;
-			filter: $__filter_white;
+			&::after {
+				content: '';
+				background-image: url('@assets/icons/keyboard_arrow_up_FILL0_wght400_GRAD0_opsz24.svg');
+				background-repeat: no-repeat;
+				position: absolute;
+				background-size: 32px;
+				width: 32px;
+				height: 32px;
+				filter: $__filter_white;
+			}
 		}
 	}
 </style>
