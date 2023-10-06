@@ -12,7 +12,7 @@ export const peoplesData: TPeoples[] = [
 	{
 		top: {
 			imageProfile: {
-				src: ImageProfile01,
+				src: ImageProfile03,
 				alt: ''
 			},
 			infoProfile: {
@@ -33,7 +33,7 @@ export const peoplesData: TPeoples[] = [
 		},
 		bottom: {
 			imageContent: {
-				src: ImageContent01,
+				src: ImageContent03,
 				alt: ''
 			},
 			addInfo: [
@@ -131,7 +131,7 @@ export const peoplesData: TPeoples[] = [
 	{
 		top: {
 			imageProfile: {
-				src: ImageProfile03,
+				src: ImageProfile01,
 				alt: ''
 			},
 			infoProfile: {
@@ -152,7 +152,7 @@ export const peoplesData: TPeoples[] = [
 		},
 		bottom: {
 			imageContent: {
-				src: ImageContent03,
+				src: ImageContent01,
 				alt: ''
 			},
 

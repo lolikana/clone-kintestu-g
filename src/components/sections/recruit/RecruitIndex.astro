@@ -1,0 +1,58 @@
+---
+import SectionLayout from '@layouts/SectionLayout.astro';
+---
+
+<SectionLayout title="Recruit" subtitles={['募集要項']}>
+	<ul class="recruit__links">
+		<li class="recruit__link">
+			<a href="/" class="next-arrow">
+				<span>新卒採用サイト</span>
+				<span>募集要項ページへ</span>
+			</a>
+		</li>
+		<li class="recruit__link">
+			<a href="/" class="next-arrow">
+				<span>Entry</span>
+			</a>
+		</li>
+	</ul>
+</SectionLayout>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.recruit__links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+		font-size: $__font14;
+		font-weight: 600;
+	}
+
+	.recruit__link {
+		flex: 1;
+		min-width: 230px;
+		height: 80px;
+		@include mq('md') {
+			max-width: 25%;
+		}
+
+		a {
+			height: 100%;
+			padding: 1rem 2rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 0.5rem;
+			background: $__linear_blue;
+			color: $__sub;
+			position: relative;
+
+			&::after {
+				filter: $__filter_white;
+				top: inherit;
+			}
+		}
+	}
+</style>
