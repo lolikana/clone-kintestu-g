@@ -88,7 +88,18 @@ const aboutData: TAboutData[] = [
 <SectionLayout title="About" subtitles={['企業情報']}>
 	<div class="about">
 		<AboutLinks />
-		{aboutData.map(data => <AboutInfo class="about__info" {...data} />)}
+		{
+			aboutData.map(data => (
+				<AboutInfo
+					class="about__info"
+					contentTitle={data.contentTitle}
+					contentText={data.contentText}
+					infoTitle={data.infoTitle}
+					infoSubtitle={data.infoSubtitle}
+					infoData={data.infoData}
+				/>
+			))
+		}
 	</div>
 </SectionLayout>
 

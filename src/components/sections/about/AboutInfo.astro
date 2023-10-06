@@ -28,7 +28,11 @@ const { class: about__index, ...attributes } = Astro.props;
 	</h4>
 	<h5 class="about__info_subtitle">主な業務</h5>
 	<div class="about__info_cards">
-		{infoData.map(data => <AboutInfoCard {...data} />)}
+		{
+			infoData.map(data => (
+				<AboutInfoCard image={data.image} title={data.title} text={data.text} />
+			))
+		}
 	</div>
 </div>
 
