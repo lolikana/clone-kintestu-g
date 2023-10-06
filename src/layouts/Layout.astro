@@ -38,7 +38,7 @@ const { headTitle } = Astro.props;
 			<slot />
 		</main>
 		<Footer />
-		<a href="#section-top" class="return-top-btn" aria-hidden="true"></a>
+		<a href="#section-top" class="return-top-btn"></a>
 	</body>
 </html>
 
@@ -48,15 +48,14 @@ const { headTitle } = Astro.props;
 	)[0] as HTMLAnchorElement;
 
 	returnTopBtn.addEventListener('click', () => {
-		returnTopBtn.setAttribute('aria-hidden', 'true');
+		returnTopBtn.classList.remove('active');
 	});
 
 	window.addEventListener('scroll', () => {
 		if (window.scrollY > 190) {
-			// Adjust the scroll position when the link appears
-			returnTopBtn.setAttribute('aria-hidden', 'false');
+			returnTopBtn.classList.add('active');
 		} else {
-			returnTopBtn.setAttribute('aria-hidden', 'true');
+			returnTopBtn.classList.remove('active');
 		}
 	});
 </script>
@@ -74,20 +73,18 @@ const { headTitle } = Astro.props;
 		justify-content: center;
 		align-items: center;
 
-		&[aria-hidden='true'] {
-			z-index: -10;
-			width: 0;
-			height: 0;
-			overflow: hidden;
-			opacity: 0;
-			transition:
-				opacity 1s ease,
-				1.2s z-index 1s,
-				1.2s width 1s,
-				1.2s height 1s;
-		}
+		z-index: -10;
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+		transition:
+			opacity 1s ease,
+			1.2s z-index 1s,
+			1.2s width 1s,
+			1.2s height 1s;
 
-		&[aria-hidden='false'] {
+		&.active {
 			z-index: 1001;
 			height: 4rem;
 			width: 4rem;
