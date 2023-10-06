@@ -5,12 +5,9 @@ import type { ISourceOptions } from 'tsparticles-engine';
 import options from './../../../particles.json';
 ---
 
-<Particles
-	id="tsparticles"
-	options={options as ISourceOptions}
-	init="particlesInit"
-	class="tsparticles"
-/>
+<div class="tsparticles">
+	<Particles id="tsparticles" options={options as ISourceOptions} init="particlesInit" />
+</div>
 
 <script>
 	import { loadFull } from 'tsparticles';
@@ -31,3 +28,9 @@ import options from './../../../particles.json';
 		console.log('particlesLoaded callback');
 	};
 </script>
+
+<style>
+	.tsparticles {
+		height: 0;
+	}
+</style>
