@@ -28,3 +28,10 @@ export interface TPeoples {
 		}[];
 	};
 }
+
+export interface TEnvironment {
+	title: string;
+	image: { src: ImageMetadata; alt: string };
+	text: string;
+	addInfo: string;
+}

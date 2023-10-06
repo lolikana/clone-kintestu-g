@@ -1,0 +1,40 @@
+---
+import SectionLayout from '@layouts/SectionLayout.astro';
+import { getCollection } from 'astro:content';
+
+import EnvironmentWrapper from './EnvironmentWrapper.astro';
+
+const environment = await getCollection('environments');
+---
+
+<SectionLayout title="Environment" subtitles={['キャリアステップ・教育制度']}>
+	<ul class="environment__items">
+		{
+			environment.map(async frontmatter => {
+				const { data } = frontmatter;
+				// const entry = await getEntry('environments', frontmatter.slug);
+				// const { Content } = await entry.render();
+
+				return (
+					<EnvironmentWrapper frontmatter={data}>{/* <Content /> */}</EnvironmentWrapper>
+				);
+			})
+		}
+	</ul>
+</SectionLayout>
+
+<style lang="scss">
+	@import '@styles/config';
+
+	.environment__items {
+		position: relative;
+		&::before {
+			content: '';
+			width: 1px;
+			height: calc(100% - 10px);
+			position: absolute;
+			border-left: 1px dotted #000;
+			top: 10px;
+		}
+	}
+</style>

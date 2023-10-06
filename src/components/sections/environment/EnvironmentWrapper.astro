@@ -1,0 +1,137 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+	frontmatter: CollectionEntry<'environments'>['data'];
+};
+
+const { frontmatter } = Astro.props;
+---
+
+<li class="environment__item">
+	<h3 class="environment__title">{frontmatter.title}</h3>
+	<div class="environment__image">
+		<Image src={frontmatter.image.url} alt="" />
+	</div>
+	<p class="environment__text">{frontmatter.text}</p>
+	{frontmatter.addInfo && <div class="environment__addInfo">{frontmatter.addInfo}</div>}
+</li>
+
+<style lang="scss">
+	@import '@styles/config';
+	.environment__item {
+		padding: 0 2rem;
+		position: relative;
+
+		&:not(:last-child) {
+			padding-bottom: 3rem;
+		}
+	}
+
+	.environment {
+		&__title {
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+
+			&::before {
+				content: '';
+				background: $__main;
+				position: absolute;
+				width: 1.5rem;
+				height: 1.5rem;
+				top: 0.25rem;
+				left: -0.75rem;
+				border-radius: 1in;
+			}
+		}
+
+		&__image {
+			overflow: hidden;
+			img {
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&__title,
+		&__text {
+			color: #000;
+		}
+
+		&__text,
+		&__addInfo {
+			font-size: $__font14;
+		}
+
+		&__addInfo {
+			font-weight: 600;
+			padding: 2rem;
+			border: 2px solid $__main;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		.environment__item {
+			grid-template-columns: 45% 1fr;
+		}
+		.environment {
+			&__title {
+				font-size: $__font28;
+			}
+
+			&__image {
+				width: 80%;
+				height: 90%;
+				margin: auto;
+			}
+
+			&__text,
+			&__addInfo {
+				font-size: $__font16;
+			}
+
+			&__text {
+				margin: auto;
+			}
+
+			&__addInfo {
+				max-width: 75%;
+				text-align: center;
+				margin: 0 auto;
+			}
+		}
+	}
+
+	//** GRID Start **/
+	.environment__item {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 2rem 350px repeat(2, auto);
+		row-gap: 1rem;
+	}
+
+	.environment__title {
+		grid-area: 1 / 1 / 2 / 3;
+	}
+
+	.environment__image {
+		grid-area: 2 / 1 / 3 / 3;
+		@include mq('md') {
+			grid-area: 2 / 1 / 3 / 2;
+		}
+	}
+
+	.environment__text {
+		grid-area: 3 / 1 / 4 / 3;
+		@include mq('md') {
+			grid-area: 2 / 2 / 3 / 3;
+		}
+	}
+
+	.environment__addInfo {
+		grid-area: 4 / 1 / 5 / 3;
+	}
+	//** GRID End **/
+</style>
