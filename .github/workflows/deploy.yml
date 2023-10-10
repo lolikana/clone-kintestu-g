@@ -20,6 +20,23 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
+      # creates a new cache when the packages in package-lock.json file change, or when the runner's operating system changes
+      - name: Cache Astro build dependencies
+        id: cache-npm
+        uses: actions/cache@v3
+        env: 
+         cache-name: cache-node-modules
+        with:
+         path: ~/.npm
+         key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+         restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - if: r${{ steps.cache-npm.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: npm list			
       - name: Install, build, and upload your site
         uses: withastro/action@v0
         with:
