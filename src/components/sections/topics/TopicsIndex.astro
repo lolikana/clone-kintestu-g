@@ -1,6 +1,6 @@
 ---
-import Photo01 from '@assets/images/topics/photo01.png';
-import Photo02 from '@assets/images/topics/photo02.png';
+import Photo01 from '@assets/images/topics/photo01.webp';
+import Photo02 from '@assets/images/topics/photo02.webp';
 import SwiperTopics from '@functionnal-components/sections/topics/SwiperTopics';
 import SectionLayout from '@layouts/SectionLayout.astro';
 import type { ITopicsCard } from '@libs/types';
@@ -27,13 +27,6 @@ const topicsData: ITopicsCard[] = [
 >
 	<SwiperTopics client:load data={topicsData} />
 </SectionLayout>
-<!-- <section class="section-topics" id="section-topics">
-	<Title
-		title={'Topics'}
-		subtitles={['パウドッグが取り組む', 'デジタルトランスフォーメーション']}
-	/>
-	<SwiperTopics client:load data={topicsData} />
-</section> -->
 
 <style lang="scss">
 	@import '@styles/config';

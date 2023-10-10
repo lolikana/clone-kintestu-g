@@ -13,7 +13,7 @@ const TopicsCard: FC<Props> = props => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.card__image}>
-				<img src={data.image.src.src} alt={data.image.alt} />
+				<img src={data.image.src.src} alt={data.image.alt} width={380} height={330} />
 			</div>
 			<div className={styles.card__content}>
 				<div className={`${styles['card__topics']} eng-text`}>
