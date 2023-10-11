@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700&display=swap');
-
 $__font100: 6.25rem;
 $__font80: 5rem;
 $__font48: 3rem;
@@ -17,3 +14,194 @@ $__font14: 0.875rem;
 $__font13: 0.8125rem;
 $__font12: 0.75rem;
 $__font10: 0.625rem;
+
+/* noto-sans-jp-100 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 100;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-100.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-200 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-200.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-300 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-300.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-regular.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-500 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-500.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-600 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-600.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-jp-700 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Noto Sans JP';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/noto-sans-jp-v52-latin/noto-sans-jp-v52-latin-700.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* barlow-condensed-100 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 100;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-100.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-100italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 100;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-100italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-200 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-200.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-200italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 200;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-200italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-300 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 300;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-300.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-300italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 300;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-300italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-500 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-500.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-500italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 500;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-500italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-600 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-600italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 600;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-700 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* barlow-condensed-700italic - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Barlow Condensed';
+	font-style: italic;
+	font-weight: 700;
+	src: url('/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700italic.woff2')
+		format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
