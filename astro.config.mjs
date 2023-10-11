@@ -8,6 +8,13 @@ export default defineConfig({
 		inlineStylesheets: 'auto'
 	},
 	vite: {
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@import "@styles/config";`
+				}
+			}
+		},
 		resolve: {
 			alias: {
 				'@components': '/src/components',
