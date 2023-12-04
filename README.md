@@ -1,9 +1,9 @@
 
-# Astro Clone: Kintest-g Landing Page
+# Astro Clone: Kintetsu-g Landing Page
 
 ## Project
 
-This project replicates the landing page of Kintest-g using Astro, Swiper, and ts-particle. The aim is to gain hands-on experience with Astro, implement dynamic components with Swiper, and add particle effects using ts-particle.
+This project replicates the landing page of Kintetsu-g using Astro, Swiper, and ts-particle. The aim is to gain hands-on experience with Astro, implement dynamic components with Swiper, and add particle effects using ts-particle.
 
 ## Technology Stack
 
